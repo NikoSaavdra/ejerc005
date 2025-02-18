@@ -1,6 +1,4 @@
 package es.santander.ascender.ejerc005.Controller;
-
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,38 +14,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.santander.ascender.ejerc002.model.Boligrafo;
-import es.santander.ascender.ejerc002.service.BoligrafoService;
+import es.santander.ascender.ejerc005.model.Persona;
+import es.santander.ascender.ejerc005.repository.PersonaRepository;
 
 @RestController
 @RequestMapping("/api/persona")
-public class BoligrafoController {
+public class PersonaController {
 
     @Autowired
-    private BoligrafoService boligrafoService;
+    private PersonaRepository personaService;
 
     @PostMapping
-    public Boligrafo create(@RequestBody Boligrafo columnaBoligrafo) {
-        return boligrafoService.create(columnaBoligrafo);
+    public Persona create(@RequestBody Persona persona) {
+        return personaService.create(persona);
     }
 
     @GetMapping("/{id}")
-    public Boligrafo read(@PathVariable("id") Long id) {
-        return boligrafoService.read(id);
+    public Persona read(@PathVariable("id") Long id) {
+        return personaService.read(id);
     }
 
     @GetMapping
-    public List<Boligrafo> list() {
-        return boligrafoService.read();
+    public List<Persona> list() {
+        return personaService.read();
     }
 
     @PutMapping
-    public Boligrafo update(@RequestBody Boligrafo columnaBoligrafo) {
-        return boligrafoService.update(columnaBoligrafo);
+    public Persona update(@RequestBody Persona persona) {
+        return personaService.update(persona);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Long id) {
-        boligrafoService.delete(id);
+        personaService.delete(id);
     }
 }

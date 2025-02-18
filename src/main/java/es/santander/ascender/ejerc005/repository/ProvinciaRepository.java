@@ -1,5 +1,8 @@
 package es.santander.ascender.ejerc005.repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public class ProvinciaRepository {
+import es.santander.ascender.ejerc005.model.Provincia;
+
+public interface ProvinciaRepository extends JpaRepository<Provincia, Long> {
 
 }
