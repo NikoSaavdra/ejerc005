@@ -4,8 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
@@ -13,7 +11,7 @@ import jakarta.validation.constraints.NotBlank;
 @Table(name = "persona")
 public class Persona {
 
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -23,8 +21,8 @@ public class Persona {
     @NotBlank(message = "El apellido es obligatorio")
     private String apellido;
 
-    @ManyToOne
-    @JoinColumn(name = "id_provincia", nullable = false)
+    //@ManyToOne
+   // @JoinColumn(name = "id_provincia", nullable = false)
 
     private Provincia provincia;
 
@@ -64,12 +62,11 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    public String getProvincia() {
-        return nombre;
+    public Provincia getProvincia() {
+        return provincia;
     }
 
-    public void setProvincia(Provincia nombre) {  
+    public void setProvincia(Provincia provincia) {
+        this.provincia = provincia;
     }
-
-
 }

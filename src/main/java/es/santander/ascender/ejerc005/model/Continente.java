@@ -7,23 +7,21 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "provincia")
-public class Provincia {
+@Table(name = "pais")
+public class Continente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
 
-    private Pais pais;
-   
-    public Provincia() {
+    public Continente(){
     }
 
-    public Provincia(Long id, String nombre, String apellido) {
-       this.id = id;
-       this.nombre = nombre;
+    public Continente( Long id, String nombre) {
+         this.id = id;
+         this.nombre = nombre;
     }
 
     public Long getId() {
@@ -41,13 +39,5 @@ public class Provincia {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public Pais getPais() {
-        return pais;
-    }
-
-    public void setPais(Pais pais) {
-        this.pais = pais;
-    }
-
+    
 }
