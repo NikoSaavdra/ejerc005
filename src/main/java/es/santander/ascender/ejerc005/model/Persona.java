@@ -21,9 +21,6 @@ public class Persona {
     @NotBlank(message = "El apellido es obligatorio")
     private String apellido;
 
-    //@ManyToOne
-   // @JoinColumn(name = "id_provincia", nullable = false)
-
     private Provincia provincia;
 
     public Persona() {

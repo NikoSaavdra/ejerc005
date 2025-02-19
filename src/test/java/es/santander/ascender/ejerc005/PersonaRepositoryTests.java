@@ -26,7 +26,6 @@ class PersonaRepositoryTests {
 
     @BeforeEach
     public void setUp() {
-        // Limpiar la base de datos antes de cada prueba para evitar dependencia entre las pruebas.
         personaRepository.deleteAll();
         provinciaRepository.deleteAll();
     }

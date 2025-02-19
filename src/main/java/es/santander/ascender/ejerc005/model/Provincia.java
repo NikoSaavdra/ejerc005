@@ -21,9 +21,10 @@ public class Provincia {
     public Provincia() {
     }
 
-    public Provincia(Long id, String nombre, String apellido) {
+    public Provincia(Long id, String nombre, Pais pais) {
        this.id = id;
        this.nombre = nombre;
+       this.pais = pais;
     }
 
     public Long getId() {

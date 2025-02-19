@@ -23,10 +23,11 @@ public class Pais {
 
     }
 
-    public Pais( Long id, String nombre, String descripcion) {
+    public Pais( Long id, String nombre, String descripcion,Continente continente ) {
          this.id = id;
          this.nombre = nombre;
          this.descripcion = descripcion;
+         this.continente = continente;
     }
 
     public Long getId() {

@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "pais")
+@Table(name = "continente")
 public class Continente {
 
     @Id
@@ -16,12 +16,12 @@ public class Continente {
 
     private String nombre;
 
-    public Continente(){
+    public Continente() {
     }
 
-    public Continente( Long id, String nombre) {
-         this.id = id;
-         this.nombre = nombre;
+    public Continente(Long id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
     }
 
     public Long getId() {
@@ -39,5 +39,4 @@ public class Continente {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
 }
