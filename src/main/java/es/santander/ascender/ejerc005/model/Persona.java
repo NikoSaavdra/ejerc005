@@ -32,12 +32,13 @@ public class Persona {
 
     }
 
-    public Persona(Long id, String nombre, String apellido) {
-       this.id = id;
-       this.nombre = nombre;
-       this.apellido = apellido;
-   
+    public Persona(Long id, String nombre, String apellido, Provincia provincia) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.provincia = provincia;
     }
+    
 
     public Long getId() {
         return id;
@@ -62,5 +63,13 @@ public class Persona {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+
+    public String getProvincia() {
+        return nombre;
+    }
+
+    public void setProvincia(Provincia nombre) {  
+    }
+
 
 }
