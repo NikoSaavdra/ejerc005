@@ -1,8 +1,6 @@
 package es.santander.ascender.ejerc005.service;
 
-
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,21 +12,38 @@ import es.santander.ascender.ejerc005.repository.ProvinciaRepository;
 public class ProvinciaService {
 
     @Autowired
-    private ProvinciaRepository provinciaRepository;
+    private ProvinciaRepository repository;
 
-    public List<Provincia> listarProvincias() {
-        return provinciaRepository.findAll();
+    public Provincia create(Provincia provincia) {
+        if (provincia.getId() != null) {
+            throw new CrudSecurityException("Han tratado de modificar un registro columna utilizando la creación",
+                    CRUDOperation.CREATE,
+                    provincia.getId());
+        }
+        return repository.save(provincia);
     }
 
-    public Optional<Provincia> buscarProvincia(Long id) {
-        return provinciaRepository.findById(id);
+    public Provincia read(Long id) {
+        return repository.findById(id).orElse(null);
     }
 
-    public Provincia guardarProvincia(Provincia provincia) {
-        return provinciaRepository.save(provincia);
+    public List<Provincia> read() {
+        return repository.findAll();
     }
 
-    public void eliminarProvincia(Long id) {
-        provinciaRepository.deleteById(id);
+    public Provincia update(Provincia provincia) {
+        if (provincia.getId() == null) {
+            throw new CrudSecurityException("Han tratado de crear un registro columna utilizando la modifición",
+                    CRUDOperation.UPDATE,
+                    null);
+
+        }
+        return repository.save(provincia);
     }
+
+    public void delete(Long id) {
+        repository.deleteById(id);
+        return;
+    }
+
 }

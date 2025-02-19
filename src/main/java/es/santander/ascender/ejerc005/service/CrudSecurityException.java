@@ -1,6 +1,6 @@
 package es.santander.ascender.ejerc005.service;
 
-public class CrudSecurityException {
+public class CrudSecurityException extends RuntimeException{
 
     private final CRUDOperation operation;
     private final Long id;
@@ -15,7 +15,7 @@ public class CrudSecurityException {
         this.id = id;
     }
     public CrudSecurityException(String message, Throwable cause, CRUDOperation operation, Long id) {
-        super(message, cause);
+        super(message);
         this.operation = operation;
         this.id = id;
     }
