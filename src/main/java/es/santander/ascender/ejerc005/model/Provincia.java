@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,7 +16,8 @@ public class Provincia {
 
     private Long id;
     private String nombre;
-
+    
+    @ManyToOne
     private Pais pais;
    
     public Provincia() {

@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,7 +17,8 @@ public class Pais {
 
     private String nombre;
     private String descripcion;
-
+    
+    @ManyToOne
     private Continente continente;
 
     public Pais(){
